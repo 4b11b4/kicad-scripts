@@ -1,0 +1,12 @@
+execfile('/home/folktek/.kicad_plugins/kicad_mmccoo/replicatelayout/replicatelayout.py')
+
+execfile('/home/ab/.kicad_plugins/kicad_mmccoo/replicatelayout/replicatelayout.py')
+
+** Remember to manually edit file in order to choose which module to replicate:
+
+~/.kicad_plugins/kicad_mmccoo/replicatelayout/replicatelayout.py
+line 296: place_instances("U1", (x, y))
+to have the correct module and spacing [ e.g. (20, 0) ] for replication
+and save replicatelayout.py
+and ALSO save the pcb (CANNOT undo (Ctrl+Z) python)
+before running the command above!
