@@ -1,4 +1,10 @@
 #!/bin/bash
+# This script is to add some default text (i.e. "-") to fields which have
+# been added to the Field Name Templates but are not actually written to
+# the schematic.
+
+# This was created because without these fields written to the .sch file, 
+# KiField is unable to write values to these fields.
 
 if [ -z "$1" ]; then
   dir=${PWD##*/}
