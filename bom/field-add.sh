@@ -3,8 +3,12 @@
 # been added to the Field Name Templates but are not actually written to
 # the schematic.
 
-# This was created because without these fields written to the .sch file, 
-# KiField is unable to write values to these fields.
+# Originally I thought without some default text KiField was unable to write
+# these fields. However, turns out that due to the way KiCad does the pathing
+# for nested hierarchical blocks, KiField was unable to find nested .sch
+# files. I commited a fix to XessCorp's branch. This is currently fixed on
+# my directory-fix branch (not yet merged with master).
+
 
 if [ -z "$1" ]; then
   dir=${PWD##*/}
