@@ -3,7 +3,6 @@ import sys, os, errno
 from pcbnew import *
 
 # CONSTANTS 
-GERB_DIR = "./fab/gerb/"
 LAYER_COUNT = 4
 DRILL_MAP = True
 ART_BOARD = True #TODO: act different if component or art board
@@ -24,6 +23,11 @@ except:
   filename = glob.glob('./*.kicad_pcb')[0]
 print("Loading file: %s" % filename)
 
+EXPORT_DIR = sys.argv[2]
+# TODO: handle path string incase '/' is already present
+GERB_DIR = EXPORT_DIR + '/' + "gerb/"
+PDF_DIR = EXPORT_DIR + '/' + 'pdf/'
+
 # Might need this later
 file_basename = os.path.splitext(filename)[0]
 
@@ -31,6 +35,8 @@ file_basename = os.path.splitext(filename)[0]
 brd = LoadBoard(filename)
 
 # Create output folders
+mkdir(EXPORT_DIR)
+print "export dir: ({0})".format(EXPORT_DIR)
 mkdir(GERB_DIR)
 print "gerb dir: ({0})".format(GERB_DIR)
 
@@ -45,6 +51,7 @@ drill.CreateDrillandMapFilesSet(GERB_DIR, True, DRILL_MAP)
 ###
 # NOTE: map is generated as a PDF by default?
 # ... manually move it from gerb folder? does peter use this? just don't generate it?
+# ... it is it usually generated as a gerber when going through the GUI?
 ###
 
 # Create plotting object
@@ -74,7 +81,6 @@ popt.SetUseAuxOrigin(False)
 # create flag to determine whether it ends up in a prototype folder or production folder
 # name the folder based on this flag, give increasing verison number based on previous exports, time & date, etc.
 ###
-popt.SetOutputDirectory("~/folktek/auto/fab/gerb/")
 
 gerb_layers = ["F_Cu",
                "F_SilkS",
@@ -97,6 +103,8 @@ if LAYER_COUNT == 4:
 
 print "exporting layers: " + str(gerb_layers)
 
+# Generate Gerbers 
+popt.SetOutputDirectory(GERB_DIR)
 for name in gerb_layers:
     pctl.SetLayer(eval(name))
     # TODO: what does "bbb" mean below?
@@ -104,12 +112,13 @@ for name in gerb_layers:
     pctl.PlotLayer()
 pctl.ClosePlot()
 
-# TODO: generate assembly PDFs
-#for name in gerb_layers:
-#    pctl.SetLayer(eval(name))
-#    # TODO: what does "bbb" mean below?
-#    pctl.OpenPlotfile(name, PLOT_FORMAT_PDF, "bbb")
-#    pctl.PlotLayer()
-#pctl.ClosePlot()
+# Generate PDFs
+popt.SetOutputDirectory(PDF_DIR)
+for name in gerb_layers:
+    pctl.SetLayer(eval(name))
+    # TODO: what does "bbb" mean below?
+    pctl.OpenPlotfile(name, PLOT_FORMAT_PDF, "bbb")
+    pctl.PlotLayer()
+pctl.ClosePlot()
 
 # TODO: rename .gbr to .gts etc for Moko (aka Protel filenames)

@@ -1,5 +1,5 @@
-''' This Python module takes the output from a 1-click-BoM export.
-
+''' This Python module takes the output from a 1-click-BoM export
+    and generates the "Description" field for passives.
 '''
 
 import pandas as pd
