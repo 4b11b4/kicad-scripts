@@ -3,7 +3,7 @@ import sys, os, errno
 from pcbnew import *
 
 # CONSTANTS 
-LAYER_COUNT = 4
+LAYER_COUNT = 2
 DRILL_MAP = True
 ART_BOARD = True #TODO: act different if component or art board
 
