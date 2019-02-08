@@ -71,6 +71,11 @@ popt.SetMirror(False)
 popt.SetUseGerberAttributes(False)
 popt.SetExcludeEdgeLayer(True)
 popt.SetUseAuxOrigin(False)
+popt.SetPlotReference(False)
+popt.SetPlotValue(False)
+popt.SetSubtractMaskFromSilk(True)
+popt.SetUseGerberProtelExtensions(True)
+popt.SetUseGerberX2Format(False)
 
 # TODO: investigate if possible to check for zone fills before exporting from python
 # TODO: plot values/ref options for popt?
