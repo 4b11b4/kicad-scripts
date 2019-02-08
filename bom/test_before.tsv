@@ -1,46 +1,46 @@
-	References	Qty	Composition	Description	Dielectric	MFR	MPN	Power	Sub	Tolerance	URL	Val	Volt.	FP
-0	C1, C30, C31	3	MLCC		X7R				Yes	0.1		10n	25V	603
-1	C2, C8, C9, C10, C11, C13, C14, C15, C16, C17, C21, C22, C23, C24, C25, C26, C27, C28, C29, C32, C33, C34, C35, C36, C37, C42, C43, C59, C77	29	MLCC		X7R				Yes	0.1		0.1u	25V	603
-2	C3, C5, C12, C18, C19, C20, C38, C39, C48, C49, C52, C56, C57, C58, C70, C71, C74, C78, C79, C80	20	MLCC		X7R				Yes	0.1		1u	25V	603
-3	C4	1	MLCC		X7R				Yes	0.05		100p	10V	603
-4	C6, C7	2	Alum Elec			Panasonic	ECA-1VM100		Yes	0.2	https://octopart.com/eca-1vm100-panasonic-209034?r=sp&s=c1x1FYQLTFyql5HylGYbBw	10u	25V	TH D5 P2
-5	C40, C41, C51, C73	4	MLCC		X7R				Yes	0.1		0.33u	25V	603
-6	C46, C50, C68, C72	4	MLCC		X7R				Yes	0.05		47n	10V	603
-7	C53, C54, C75, C76	4	MLCC		X7R				Yes	0.1		10u	25V	805
-8	D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14	14		LED White 2700k		Luminus Devices	MP-2016-1100-27-90		No		https://octopart.com/mp-2016-1100-27-90-luminus+devices-50919083?r=sp&s=RAcYk3SpSvO_zx8PPCIpgg	2700k		
-9	D15, D16, D17, D18, D19, D20, D21, D22, D23, D24, D25, D26, D27, D28, D32, D33, D34, D35, D36, D37, D40, D41, D42, D43, D44, D47, D48, D49	28		Diode Gen. Purp. 1N4148 SOD-323		Diodes Inc	1N4148WSF-7	1.0	Yes		https://www.digikey.com/product-detail/en/1N4148WSF-7/1N4148WSF-7DICT-ND/7605263?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=usd&site=us&utm_source=octopart	1N4148	100V	
-10	J1, J2, J9, J10, J11, J12, J14, J15	8		Pin Header 1x2 Male H=6mm					Yes			Jumper		
-11	J3	1		Shrouded Header 2x5 P2.54		3M	30310-6002HB		Yes		http://www.mouser.com/ProductDetail/3M/30310-6002HB/?qs=%2Fha2pyFadujmEPrJf2E39mP3Cdkf3z1pbr6IUMwjVHHYcSaUKXKOkQ%3D%3D	Eurorack Power Header		
-12	J4, J5, J6, J7	4		Pin Header 1x4 Male H=6mm					Yes			ARTC Expansion Header		
-13	J8, J13	2		Pin Header 1x3 Male H=6mm					Yes			Clock Div Select		
-14	JACK1, JACK2, JACK3, JACK4, JACK5, JACK6, JACK7, JACK8, JACK9, JACK10, JACK11, JACK12, JACK13, JACK14	14		Jack 3.5mm Vertical		Qing Pu	PJ-301B		No			Jack 3.5mm		
-15	Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q19, Q20, Q27, Q28, Q35, Q36, Q37, Q38	22		BJT SOT23 NPN 30V 0.6A		ON Semiconductor	MMBT2222ALT1G		Yes		http://www.mouser.com/Search/ProductDetail.aspx?qs=HVbQlW5zcXWwnD7Jokybqg%3d%3d	MMBT2222		
-16	Q22, Q25, Q29, Q32	4		BJT SOT23 PNP 40V 0.2A		MCC	MMBT3904-TP		Yes		https://octopart.com/mmbt3904-tp-mcc-12178639?r=sp&s=RqHlfszfSiO4lmslOzRWEw	MMBT3904		
-17	Q23, Q26, Q30, Q33	4		BJT SOT23 PNP 40V 0.2A		ON Semiconductor	MMBT3906LT3G		Yes		https://octopart.com/mmbt3906lt3g-on+semiconductor-835280?r=sp&s=7cg7LsvvQgy7Oc717eNyLA	MMBT3906		
-18	Q24, Q31	2		MOSFET 30V 0.56A SOT23-3 G1D2S3		ON Semiconductor	NTR4003NT1G		Yes		https://octopart.com/ntr4003nt1g-on+semiconductor-2451489?r=sp&s=1LA6muXyR0WlGUWOh9LbKA	NTR4003NT1G		
-19	R1, R2, R3, R4, R5, R6, R8, R22, R24, R26, R28, R30, R32, R34, R36, R38, R49, R50, R51, R52, R53, R58, R77, R78, R79, R137, R138, R189, R190, R191, R205, R206, R207, R220, R221, R222	36	Thick					0.0625	Yes	0.05		10k		603
-20	R7, R9, R10, R12, R13, R15, R16, R18, R19, R21, R23, R25, R27, R29, R31, R33, R35, R37, R41, R42, R44, R45, R47, R48, R54, R55, R56, R57, R59, R60, R61, R62, R67, R68, R69, R70, R71, R72, R73, R74, R75, R76, R80, R81, R84, R85, R86, R87, R88, R89, R91, R139, R140, R146, R147, R149, R150, R192, R193, R196, R209, R210, R211, R212, R213, R214, R215, R216, R217, R218, R219, R224, R225, R226, R227, R228, R229, R230, R231, R232, R233, R234, R235, R236, R237, R238, R239, R240, R241, R242, R259, R260	92	Thick					0.0625	Yes	0.05		100k		603
-21	R11, R14, R17, R20, R43, R46, R63, R64, R65, R66, R82, R90, R92, R136, R188, R194	16	Thick					0.0625	Yes	0.05		1k		603
-22	R39, R40	2	Thick					0.25	Yes	0.05		10		805
-23	R83, R195	2	Thick					0.0625	Yes	0.05		82.5k		603
-24	R129, R130, R133, R181, R182, R185	6	Thick					0.0625	Yes	0.05		220		603
-25	R131, R183	2	Thick					0.0625	Yes	0.05		15k		603
-26	R132, R135, R184, R187	4	Thick					0.0625	Yes	0.05		47k		603
-27	R134, R186	2	Thick					0.0625	Yes	0.05		680k		603
-28	R208, R223	2	Thick					0.0625	Yes	0.05		1.65k		603
-29	RV1, RV2, RV3, RV4	4		Potentiometer 1M RK09L Series (1M, not 50K! Verify with Peter Peng)		Alps	RK09L1140A5P	0.05	Yes	0.2	https://www2.mouser.com/datasheet/2/15/RK09L-1370814.pdf	1M		
-30	U1	1		Cap Touch 7Key SOIC14		Microchip	AT42QT1070-SSU		No		https://octopart.com/at42qt1070-ssu-microchip-77758565?r=sp&s=WwIy048jRqSG5YO1fpvsOw	AT42QT1070		
-31	U2	1		Voltage Regulator 5V 300mA SOT-23-5		Diodes Inc	AP2210K-5.0TRG1		No		https://octopart.com/ap2210k-5.0trg1-diodes+inc.-30954631?r=sp&s=5zZ67BPZSLepFWgGaUKdpw	AP2210K-5.0TRG1		
-32	U3, U12, U14, U35	4		CMOS Quad Switch 18V		Texas Instruments	CD4066BPWR		Yes		https://octopart.com/cd4066bpwr-texas+instruments-472249?r=sp&s=qbHluskRQ16gQdFBwlx42w	4066		
-33	U4, U24, U37, U38	4		Op Amp Quad TSSOP-14		Texas Instruments	LM324PWR		Yes			LM324		
-34	U5, U7	2		Binary Ripple Counter 7Stage 14TSSOP		Texas Instruments	CD4024BPWR		Yes		https://octopart.com/cd4024bpwr-texas+instruments-432005?r=sp&s=fE4km34ORvu9Q5YwtZB2zw	4024		
-35	U6, U8	2		Multiplexer 5V 8 Channel 		Nexperia	74HC4051PW,118		Yes		https://octopart.com/74hc4051pw%2C118-nexperia-78736096?r=sp&s=XXRLSSTqSyiD2DiXuxfFAA	74HC4051		
-36	U9, U10, U13, U27, U28, U39	6		Dual D Type Flip Flop		ON Semi	MC14013BDTR2G		Yes		https://octopart.com/mc14013bdtr2g-on+semiconductor-879004?r=sp&s=NZAfCEUJS8eq7dxPFIYqiA	4013		
-37	U11, U29	2		AND Gate 5V SOT-353		Diodes Inc	74AHCT1G08SE-7		Yes		https://octopart.com/74ahct1g08se-7-diodes+inc.-20402038?r=sp&s=0NDU4Je7SWiuhq7tES7FTw	74AHCT1G08		
-38	U15, U19	2		Schmitt Trigger Dual Non-Inv 5V SOT-363		Nexperia	74LVC2G17GW,125		Yes		https://octopart.com/74lvc2g17gw%2C125-nexperia-78738029?r=sp&s=esB4kQ7xSS6OOYR2jbMP9w	74LVC2G17		
-39	U16, U17, U20, U21	4		Monostable Multivibrator Dual 5V		Texas Instruments	SN74AHC123APWR		No		https://octopart.com/sn74ahc123apwr-texas+instruments-490091?r=sp&s=Lv0o6_KZR0CTHLhvhiuW7g	74LS123		
-40	U18, U34	2		Comparator Quad TSSOP-14		Texas Instruments	LM339PWR		Yes		https://octopart.com/lm339pwr-texas+instruments-428429?r=sp&s=mVyIypKfT46mnF_PjBfRsw	LM339		
-41	U22	1		Op Amp Quad Low-Noise JFET-Input		Texas Instruments	TL074CPWR		No			TL074		
-42	U25	1		Schmitt Trigger Dual Inv 5V SOT-363		Nexperia	74LVC2G14GW,125		Yes		https://www.digikey.com/product-detail/en/74LVC2G14GW,125/1727-4217-1-ND/2116536?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=usd&site=us&utm_source=octopart	74LVC2G14		
-43	U26	1		XOR 2-IN Dual 5V 		ON Semiconductor	NL27WZ86USG 		Yes		https://octopart.com/nl27wz86usg-on+semiconductor-467659?r=sp&s=pi7cpO_DQuqKgMr1pvYD7Q	NL27WZ86USG		
-44	V1, V2, V3, V4	4		Pin Header (Multiple) Female 1x2, 1x2, 1x4 Female H=6mm					Yes			Vactrol Female Connector		
+	References	Qty	Composition	Description	Dielectric	MFR	MPN	Power	Sub	Tolerance	URL	Val	Volt.
+0	C1, C30, C31	3	MLCC		X7R				Yes	0.1		10n	25V
+1	C2, C8, C9, C10, C11, C13, C14, C15, C16, C17, C21, C22, C23, C24, C25, C26, C27, C28, C29, C32, C33, C34, C35, C36, C37, C42, C43, C59, C77	29	MLCC		X7R				Yes	0.1		0.1u	25V
+2	C3, C5, C12, C18, C19, C20, C38, C39, C48, C49, C52, C56, C57, C58, C70, C71, C74, C78, C79, C80	20	MLCC		X7R				Yes	0.1		1u	25V
+3	C4	1	MLCC		X7R				Yes	0.05		100p	10V
+4	C6, C7	2	Alum Elec			Panasonic	ECA-1VM100		Yes	0.2	https://octopart.com/eca-1vm100-panasonic-209034?r=sp&s=c1x1FYQLTFyql5HylGYbBw	10u	25V
+5	C40, C41, C51, C73	4	MLCC		X7R				Yes	0.1		0.33u	25V
+6	C46, C50, C68, C72	4	MLCC		X7R				Yes	0.05		47n	10V
+7	C53, C54, C75, C76	4	MLCC		X7R				Yes	0.1		10u	25V
+8	D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14	14		LED White 2700k		Luminus Devices	MP-2016-1100-27-90		No		https://octopart.com/mp-2016-1100-27-90-luminus+devices-50919083?r=sp&s=RAcYk3SpSvO_zx8PPCIpgg	2700k	
+9	D15, D16, D17, D18, D19, D20, D21, D22, D23, D24, D25, D26, D27, D28, D32, D33, D34, D35, D36, D37, D40, D41, D42, D43, D44, D47, D48, D49	28		Diode Gen. Purp. 1N4148 SOD-323		Diodes Inc	1N4148WSF-7	1.0	Yes		https://www.digikey.com/product-detail/en/1N4148WSF-7/1N4148WSF-7DICT-ND/7605263?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=usd&site=us&utm_source=octopart	1N4148	100V
+10	J1, J2, J9, J10, J11, J12, J14, J15	8		Pin Header 1x2 Male H=6mm					Yes			Jumper	
+11	J3	1		Shrouded Header 2x5 P2.54		3M	30310-6002HB		Yes		http://www.mouser.com/ProductDetail/3M/30310-6002HB/?qs=%2Fha2pyFadujmEPrJf2E39mP3Cdkf3z1pbr6IUMwjVHHYcSaUKXKOkQ%3D%3D	Eurorack Power Header	
+12	J4, J5, J6, J7	4		Pin Header 1x4 Male H=6mm					Yes			ARTC Expansion Header	
+13	J8, J13	2		Pin Header 1x3 Male H=6mm					Yes			Clock Div Select	
+14	JACK1, JACK2, JACK3, JACK4, JACK5, JACK6, JACK7, JACK8, JACK9, JACK10, JACK11, JACK12, JACK13, JACK14	14		Jack 3.5mm Vertical		Qing Pu	PJ-301B		No			Jack 3.5mm	
+15	Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q19, Q20, Q27, Q28, Q35, Q36, Q37, Q38	22		BJT SOT23 NPN 30V 0.6A		ON Semiconductor	MMBT2222ALT1G		Yes		http://www.mouser.com/Search/ProductDetail.aspx?qs=HVbQlW5zcXWwnD7Jokybqg%3d%3d	MMBT2222	
+16	Q22, Q25, Q29, Q32	4		BJT SOT23 PNP 40V 0.2A		MCC	MMBT3904-TP		Yes		https://octopart.com/mmbt3904-tp-mcc-12178639?r=sp&s=RqHlfszfSiO4lmslOzRWEw	MMBT3904	
+17	Q23, Q26, Q30, Q33	4		BJT SOT23 PNP 40V 0.2A		ON Semiconductor	MMBT3906LT3G		Yes		https://octopart.com/mmbt3906lt3g-on+semiconductor-835280?r=sp&s=7cg7LsvvQgy7Oc717eNyLA	MMBT3906	
+18	Q24, Q31	2		MOSFET 30V 0.56A SOT23-3 G1D2S3		ON Semiconductor	NTR4003NT1G		Yes		https://octopart.com/ntr4003nt1g-on+semiconductor-2451489?r=sp&s=1LA6muXyR0WlGUWOh9LbKA	NTR4003NT1G	
+19	R1, R2, R3, R4, R5, R6, R8, R22, R24, R26, R28, R30, R32, R34, R36, R38, R49, R50, R51, R52, R53, R58, R77, R78, R79, R137, R138, R189, R190, R191, R205, R206, R207, R220, R221, R222	36	Thick					0.0625	Yes	0.05		10k	
+20	R7, R9, R10, R12, R13, R15, R16, R18, R19, R21, R23, R25, R27, R29, R31, R33, R35, R37, R41, R42, R44, R45, R47, R48, R54, R55, R56, R57, R59, R60, R61, R62, R67, R68, R69, R70, R71, R72, R73, R74, R75, R76, R80, R81, R84, R85, R86, R87, R88, R89, R91, R139, R140, R146, R147, R149, R150, R192, R193, R196, R209, R210, R211, R212, R213, R214, R215, R216, R217, R218, R219, R224, R225, R226, R227, R228, R229, R230, R231, R232, R233, R234, R235, R236, R237, R238, R239, R240, R241, R242, R259, R260	92	Thick					0.0625	Yes	0.05		100k	
+21	R11, R14, R17, R20, R43, R46, R63, R64, R65, R66, R82, R90, R92, R136, R188, R194	16	Thick					0.0625	Yes	0.05		1k	
+22	R39, R40	2	Thick					0.25	Yes	0.05		10	
+23	R83, R195	2	Thick					0.0625	Yes	0.05		82.5k	
+24	R129, R130, R133, R181, R182, R185	6	Thick					0.0625	Yes	0.05		220	
+25	R131, R183	2	Thick					0.0625	Yes	0.05		15k	
+26	R132, R135, R184, R187	4	Thick					0.0625	Yes	0.05		47k	
+27	R134, R186	2	Thick					0.0625	Yes	0.05		680k	
+28	R208, R223	2	Thick					0.0625	Yes	0.05		1.65k	
+29	RV1, RV2, RV3, RV4	4		Potentiometer 1M RK09L Series (1M, not 50K! Verify with Peter Peng)		Alps	RK09L1140A5P	0.05	Yes	0.2	https://www2.mouser.com/datasheet/2/15/RK09L-1370814.pdf	1M	
+30	U1	1		Cap Touch 7Key SOIC14		Microchip	AT42QT1070-SSU		No		https://octopart.com/at42qt1070-ssu-microchip-77758565?r=sp&s=WwIy048jRqSG5YO1fpvsOw	AT42QT1070	
+31	U2	1		Voltage Regulator 5V 300mA SOT-23-5		Diodes Inc	AP2210K-5.0TRG1		No		https://octopart.com/ap2210k-5.0trg1-diodes+inc.-30954631?r=sp&s=5zZ67BPZSLepFWgGaUKdpw	AP2210K-5.0TRG1	
+32	U3, U12, U14, U35	4		CMOS Quad Switch 18V		Texas Instruments	CD4066BPWR		Yes		https://octopart.com/cd4066bpwr-texas+instruments-472249?r=sp&s=qbHluskRQ16gQdFBwlx42w	4066	
+33	U4, U24, U37, U38	4		Op Amp Quad TSSOP-14		Texas Instruments	LM324PWR		Yes			LM324	
+34	U5, U7	2		Binary Ripple Counter 7Stage 14TSSOP		Texas Instruments	CD4024BPWR		Yes		https://octopart.com/cd4024bpwr-texas+instruments-432005?r=sp&s=fE4km34ORvu9Q5YwtZB2zw	4024	
+35	U6, U8	2		Multiplexer 5V 8 Channel 		Nexperia	74HC4051PW,118		Yes		https://octopart.com/74hc4051pw%2C118-nexperia-78736096?r=sp&s=XXRLSSTqSyiD2DiXuxfFAA	74HC4051	
+36	U9, U10, U13, U27, U28, U39	6		Dual D Type Flip Flop		ON Semi	MC14013BDTR2G		Yes		https://octopart.com/mc14013bdtr2g-on+semiconductor-879004?r=sp&s=NZAfCEUJS8eq7dxPFIYqiA	4013	
+37	U11, U29	2		AND Gate 5V SOT-353		Diodes Inc	74AHCT1G08SE-7		Yes		https://octopart.com/74ahct1g08se-7-diodes+inc.-20402038?r=sp&s=0NDU4Je7SWiuhq7tES7FTw	74AHCT1G08	
+38	U15, U19	2		Schmitt Trigger Dual Non-Inv 5V SOT-363		Nexperia	74LVC2G17GW,125		Yes		https://octopart.com/74lvc2g17gw%2C125-nexperia-78738029?r=sp&s=esB4kQ7xSS6OOYR2jbMP9w	74LVC2G17	
+39	U16, U17, U20, U21	4		Monostable Multivibrator Dual 5V		Texas Instruments	SN74AHC123APWR		No		https://octopart.com/sn74ahc123apwr-texas+instruments-490091?r=sp&s=Lv0o6_KZR0CTHLhvhiuW7g	74LS123	
+40	U18, U34	2		Comparator Quad TSSOP-14		Texas Instruments	LM339PWR		Yes		https://octopart.com/lm339pwr-texas+instruments-428429?r=sp&s=mVyIypKfT46mnF_PjBfRsw	LM339	
+41	U22	1		Op Amp Quad Low-Noise JFET-Input		Texas Instruments	TL074CPWR		No			TL074	
+42	U25	1		Schmitt Trigger Dual Inv 5V SOT-363		Nexperia	74LVC2G14GW,125		Yes		https://www.digikey.com/product-detail/en/74LVC2G14GW,125/1727-4217-1-ND/2116536?utm_campaign=buynow&WT.z_cid=ref_octopart_dkc_buynow&utm_medium=aggregator&curr=usd&site=us&utm_source=octopart	74LVC2G14	
+43	U26	1		XOR 2-IN Dual 5V 		ON Semiconductor	NL27WZ86USG 		Yes		https://octopart.com/nl27wz86usg-on+semiconductor-467659?r=sp&s=pi7cpO_DQuqKgMr1pvYD7Q	NL27WZ86USG	
+44	V1, V2, V3, V4	4		Pin Header (Multiple) Female 1x2, 1x2, 1x4 Female H=6mm					Yes			Vactrol Female Connector	

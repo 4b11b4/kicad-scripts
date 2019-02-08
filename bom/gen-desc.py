@@ -1,23 +1,12 @@
 ''' This Python module takes the output from a 1-click-BoM export
     and generates the "Description" field for passives.
+
+Input: a csv file exported from 1clickBoM
 '''
 
 import pandas as pd
 import sys
-df = pd.read_csv(sys.argv[1], sep=',')
-columns = [
-           'Composition', 
-           'Dielectric',
-           #'Footprint',
-           'FP',
-           'MFR',
-           'Power',
-           'Sub',
-           'Tolerance',
-           'URL',
-           'Val',
-           'Volt.',
-          ]
+df = pd.read_csv(sys.argv[1], sep='\t')
 for series in df:
   print(series)
 df.applymap(str)
@@ -44,7 +33,23 @@ for idx,row in df.iterrows():
                                str(row['Dielectric'])
   else:
     pass
+
+columns = [
+           'Composition', 
+           'Dielectric',
+           #'Footprint',
+           #'FP',
+           'MFR',
+           'Power',
+           'Sub',
+           'Tolerance',
+           'URL',
+           'Val',
+           'Volt.',
+          ]
+
 for col in columns:
   df.drop(col, axis=1, inplace=True)
 print(df)
+
 df.to_csv('./test.tsv', sep='\t')
