@@ -6,6 +6,7 @@ if [ -z "$1" ]; then
 else
   dir=$1
   printf "Using directory: $dir\n"
+  printf "***\nAll .sch files in this directory will modify symbols below. View the script to see.\n***\n"
 fi
 
 select yn in "Y" "N"; do
@@ -26,4 +27,7 @@ find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/Device:R_US/De
 find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/comp-rescue:D_Small_ALT-Device/Device:D_Small/g'
 find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/comp-rescue:D_Small-Device/Device:D_Small/g'
 find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/comp-rescue:Q_NMOS_GDS-Device/Device:Q_NMOS_GDS/g'
+find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/first_blox-eagle-import:CPOL-USE2-5/Device:CP/g'
+find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/first_blox-eagle-import:1N4148DO35-10/Device:D_Small/g'
+
 #find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's///g'
