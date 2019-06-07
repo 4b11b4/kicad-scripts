@@ -1,4 +1,8 @@
 #!/usr/bin/env python2.7
+
+''' This file simply loads a PCB and prints a list of all of the components.
+'''
+
 import os
 import pcbnew
 
@@ -17,5 +21,3 @@ brd = pcbnew.LoadBoard(filename)
 
 for mod in brd.GetModules():
   print("* Module: %s at %s" % (mod.GetReference(), mod.GetPosition()))
-
-

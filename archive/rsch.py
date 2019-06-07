@@ -1,4 +1,8 @@
 #!/usr/bin/env python2.7
+
+''' This file attempts to get a list of the components from the netlist.
+'''
+
 import sys, os, errno
 from kinparse import parse_netlist
 
