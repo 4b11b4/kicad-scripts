@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# This script is used when:
+# Similar symbols in the schematic vary and prevent a successful export of the
+# BoM. For example, two resistors: one is properly from the kicad-library, and
+# the other is from the rescue library.
+# Because the symbols differ, 1_click_BoM exports them as different parts.
+#
+# This script is essentially a find and replace (via sed) for those parts.
+# You can supply a directory as a parameter when running the script, and then
+# all schematic (.sch) files will be subject to the sed commands below.
+
 if [ -z "$1" ]; then
   dir=${PWD##*/}
   printf "***\nNo parameter entered.\nUsing name of current directory.\n***\n"
@@ -19,6 +29,7 @@ done
 printf "Rescuing...\n"
 printf "$1\n"
 
+# Verify the strings used for "sed" before running.
 find $dir -type f -name "*.sch" -print0
 find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/comp-rescue:C_Small-Device/Device:C_Small/g'
 find $dir -type f -name "*.sch" -print0 | xargs -0 sed -i'' -e 's/comp-rescue:R_Small-Device/Device:R_Small/g'
