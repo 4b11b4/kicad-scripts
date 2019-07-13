@@ -75,7 +75,7 @@ popt.SetPlotReference(False)
 popt.SetPlotValue(False)
 popt.SetSubtractMaskFromSilk(True)
 popt.SetUseGerberProtelExtensions(True)
-popt.SetUseGerberX2Format(False)
+#popt.SetUseGerberX2Format(False)
 
 # TODO: investigate if possible to check for zone fills before exporting from python
 # TODO: plot values/ref options for popt?
@@ -89,16 +89,16 @@ popt.SetUseGerberX2Format(False)
 
 gerb_layers = ["F_Cu",
                "F_SilkS",
-               "F_Paste",
+               #"F_Paste",
                "F_Mask",
-               "F_Fab",
+               #"F_Fab",
                "B_Cu",
                "B_SilkS",
-               "B_Paste",
+               #"B_Paste",
                "B_Mask",
-               "B_Fab",
-               "Eco2_User",
-               "Cmts_User",
+               #"B_Fab",
+               #"Eco2_User",
+               #"Cmts_User",
                "Edge_Cuts"]
 
 # TODO catch for invalid LAYER_COUNT, do nothing for 2 layers, etc.
