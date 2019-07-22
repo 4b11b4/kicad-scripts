@@ -2,12 +2,8 @@
 import sys, os, errno
 from pcbnew import *
 
-# CONSTANTS 
-LAYER_COUNT = 2
-DRILL_MAP = True
-ART_BOARD = True #TODO: act different if component or art board
 
-# Helper function to make directories
+# Function to make directories... (is there anything built-in?)
 def mkdir(name):
   try:
     os.makedirs(name)
@@ -15,30 +11,55 @@ def mkdir(name):
     if e.errno != errno.EEXIST:
       raise
 
-# Get command line arguments (filename) 
+
+# CONSTANTS 
+BOARD_LAYERS = 2
+DRILL_MAP = True
+
+
+# Start of script: full filename is passed as the only argument
 try:
-  filename=sys.argv[1]
+  print("Loading file: %s" % sys.argv[1])
+  fullname=sys.argv[1]
 except:
   import glob
-  filename = glob.glob('./*.kicad_pcb')[0]
-print("Loading file: %s" % filename)
+  fullname = glob.glob('./*.kicad_pcb')[0]
 
-EXPORT_DIR = sys.argv[2]
-# TODO: handle path string incase '/' is already present
-GERB_DIR = EXPORT_DIR + '/' + "gerb/"
-PDF_DIR = EXPORT_DIR + '/' + 'pdf/'
+without_extension = os.path.splitext(fullname)[0]
+# We removed extension, but not the name. Split the string at the slashes.
+split = without_extension.split('/')
+# Rejoin the string, but without the last split in the arr (and the first = '')
+join = '';
+for segment in split[1:len(split)-1]:
+    join += '/' + segment;
+path = join #The base path for exporting is the same as the .kicad_pcb file
+print('Exporting to: %s' % path);
 
-# Might need this later
-file_basename = os.path.splitext(filename)[0]
+# We're outputting a lot of stuff... let's at least put it in one folder...
+exp_dir = path + '/fab'
+print('Base Export Directory: %s' % exp_dir)
+
+# Dictionary of export types
+exp_dict = { 'gerb': True,
+             'pdf' : True,
+             'dxf' : True,
+             'hpgl': True,
+             'post': True,
+             'svg' : True,
+             'und' : True,
+           }
+
+# Make directory for each export type
+for output, enabled in exp_dict.items():
+    print(output)
+    print(enabled)
+    mkdir(exp_dir)
+    if(enabled):
+        mkdir(exp_dir + '/' + output + '/')
+
 
 # Load board
 brd = LoadBoard(filename)
-
-# Create output folders
-mkdir(EXPORT_DIR)
-print "export dir: ({0})".format(EXPORT_DIR)
-mkdir(GERB_DIR)
-print "gerb dir: ({0})".format(GERB_DIR)
 
 # Create Excellon files
 drill = EXCELLON_WRITER(brd)
@@ -48,15 +69,17 @@ drill.SetOptions(False, False, wxPoint(0,0), True)
 drill.SetFormat(True)
 #drill.CreateDrillandMapFilesSet(location, generateDrill, generateMap)
 drill.CreateDrillandMapFilesSet(GERB_DIR, True, DRILL_MAP)
-###
-# NOTE: map is generated as a PDF by default?
-# ... manually move it from gerb folder? does peter use this? just don't generate it?
-# ... it is it usually generated as a gerber when going through the GUI?
-###
+####
+## NOTE: map is generated as a PDF by default?
+## ... manually move it from gerb folder? does peter use this? just don't generate it?
+## ... it is it usually generated as a gerber when going through the GUI?
+####
 
 # Create plotting object
-pctl = PLOT_CONTROLLER(brd) 
-# Get current options of board? what is the point if this if we set them below?
+pctl = PLOT_CONTROLLER(brd)
+
+# Get current options of board?
+# what is the point if this if we set them below?
 popt = pctl.GetPlotOptions()
 
 # Gerber export 
@@ -101,14 +124,14 @@ gerb_layers = ["F_Cu",
                #"Cmts_User",
                "Edge_Cuts"]
 
-# TODO catch for invalid LAYER_COUNT, do nothing for 2 layers, etc.
-if LAYER_COUNT == 4:
+# TODO catch for invalid BOARD_LAYERS, do nothing for 2 layers, etc.
+if BOARD_LAYERS == 4:
   gerb_layers.append("In1_Cu")
   gerb_layers.append("In2_Cu")
 
 print "exporting layers: " + str(gerb_layers)
 
-# Generate Gerbers 
+# Gerbers 
 popt.SetOutputDirectory(GERB_DIR)
 for name in gerb_layers:
     pctl.SetLayer(eval(name))
@@ -117,11 +140,18 @@ for name in gerb_layers:
     pctl.PlotLayer()
 pctl.ClosePlot()
 
-# Generate PDFs
+# PDFs
 popt.SetOutputDirectory(PDF_DIR)
 for name in gerb_layers:
     pctl.SetLayer(eval(name))
-    # TODO: what does "bbb" mean below?
+    pctl.OpenPlotfile(name, PLOT_FORMAT_PDF, "bbb")
+    pctl.PlotLayer()
+pctl.ClosePlot()
+
+# PDFs
+popt.SetOutputDirectory(PDF_DIR)
+for name in gerb_layers:
+    pctl.SetLayer(eval(name))
     pctl.OpenPlotfile(name, PLOT_FORMAT_PDF, "bbb")
     pctl.PlotLayer()
 pctl.ClosePlot()
