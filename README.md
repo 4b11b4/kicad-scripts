@@ -1,4 +1,3 @@
 # KiCad Scripts
-This repository contains scripts useful for:
-* BoM generation
-* Manufacturing documentation export
+This repository contains (working) scripts for:
+* Manufacturing documentation export (board plotting) 
