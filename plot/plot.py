@@ -11,6 +11,22 @@ def mkdir(name):
     if e.errno != errno.EEXIST:
       raise
 
+## Get only argument: full filename of .kicad_pcb file
+try:
+  print("Loading file: %s" % sys.argv[1])
+  fullname=sys.argv[1]
+except:
+  import glob
+  fullname = glob.glob('./*.kicad_pcb')[0]
+
+## Remove file extension and name to get base path
+without_extension = os.path.splitext(fullname)[0] #splitext vs split?
+path = os.path.abspath(os.path.split(fullname)[0]) #get rid of splitting...
+#The base path for exporting is at the .kicad_pcb file
+
+## Put everything in one folder
+exp_dir = path + '/fab';
+print('Exporting to: %s' % exp_dir);
 
 # Setup
 ## CONSTANTS 
@@ -41,27 +57,10 @@ if BOARD_NUM_LAYERS == 4:
   LAYERS.append("In1_Cu")
   LAYERS.append("In2_Cu")
 
-## Might as well check if the layers are correct at the start
+## Verify layers to export 
 print("Are you sure you want to export these layers?");
 for layer in LAYERS: print(layer)
 raw_input("[Warning] -- will overwrite files, press any key to continue:")
-
-## Get only argument: full filename of .kicad_pcb file
-try:
-  print("Loading file: %s" % sys.argv[1])
-  fullname=sys.argv[1]
-except:
-  import glob
-  fullname = glob.glob('./*.kicad_pcb')[0]
-
-## Remove file extension and name to get base path
-without_extension = os.path.splitext(fullname)[0] #splitext vs split?
-path = os.path.abspath(os.path.split(fullname)[0]) #get rid of splitting...
-#The base path for exporting is at the .kicad_pcb file
-
-## Put everything in one folder
-exp_dir = path + '/fab';
-print('Exporting to: %s' % exp_dir);
 
 ## Dictionary of possible export types
 exp_dict = { 'dxf'   : 0,
@@ -71,6 +70,7 @@ exp_dict = { 'dxf'   : 0,
              'post'  : 1,
              'svg'   : 1,
              'undefined': 0 };
+
 ## If enabled, make directory
 mkdir(exp_dir); # make the fab folder first
 DIRS = {}; # will contain path for each enabled output type
