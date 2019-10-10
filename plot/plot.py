@@ -31,7 +31,7 @@ print('Exporting to: %s' % exp_dir);
 # Setup
 ## CONSTANTS 
 DRILL_MAP_EN = True #print drl-map pdf
-BOARD_NUM_LAYERS = 2 #2, 4...
+BOARD_NUM_LAYERS = 4 #2, 4...
 LAYERS = ["F_Cu",
           #"F_Adhes",
           "F_Paste",
